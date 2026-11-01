@@ -1,0 +1,8 @@
+النشر على Render (مجاني للتجربة):
+1) ارفع مجلد المشروع إلى مستودع GitHub (الملفات في الجذر، بما فيها Dockerfile).
+2) في render.com: New + > Web Service > اختر المستودع.
+3) Language: Docker  (سيستخدم Dockerfile تلقائياً ويثبت ffmpeg).
+4) اضغط Create Web Service. بعد دقائق تحصل على رابط https يعمل على كل الأجهزة.
+
+تحديث yt-dlp: أعد النشر (Manual Deploy > Clear build cache & deploy) كل أسبوعين تقريباً.
+بدائل: Railway أو Fly.io أو أي VPS (docker build -t vd . && docker run -p 80:8080 vd).

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6ff">
+  <title>منزّل الفيديو</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <div class="topbar">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 3.5v11m0 0 4-4m-4 4-4-4M5 16.5v2A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5v-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="intro">
+        <span class="eyebrow">أداة تنزيل سهلة وسريعة</span>
+        <h1>منزّل الفيديو</h1>
+        <p class="sub">الصق رابط الفيديو، اختر الجودة، ثم نزّله.</p>
+      </div>
+      <div class="theme-control">
+        <input class="theme-toggle-input" id="theme-mode" type="checkbox" aria-label="تفعيل الوضع الداكن">
+        <label class="theme-toggle" for="theme-mode">
+          <span class="theme-icon" aria-hidden="true">☾</span>
+          <span class="theme-label">الوضع الداكن</span>
+          <span class="toggle-track" aria-hidden="true"><span></span></span>
+        </label>
+      </div>
+    </div>
+
+    <section class="download-panel" aria-label="تنزيل الفيديو">
+      <div class="panel-heading">
+        <div class="step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M9.5 14.5 14.5 9.5M8 16H6.5a4 4 0 0 1 0-8h4M16 8h1.5a4 4 0 1 1 0 8h-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h2>أدخل رابط الفيديو</h2>
+          <p>ضع الرابط بالأسفل حتى نتمكن من فحصه.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <input id="url" type="url" placeholder="https://..." aria-label="رابط الفيديو" autocomplete="url" spellcheck="false">
+        <button id="check" type="button">
+          <span>فحص الرابط</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <p id="err" role="alert"></p>
+
+      <section id="card">
+        <img id="thumb" alt="">
+        <div class="body">
+          <span class="result-label">الفيديو المحدد</span>
+          <h2 id="title"></h2>
+          <small id="meta"></small>
+          <div class="opts">
+            <select id="quality" aria-label="الجودة"></select>
+            <button id="dl" type="button">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3.5v11m0 0 4-4m-4 4-4-4M5 16.5v2A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5v-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>نزّل الفيديو</span>
+            </button>
+          </div>
+
+          <section id="progress-panel" class="progress-panel" hidden aria-live="polite" aria-label="تقدم التنزيل">
+            <div class="progress-heading">
+              <span id="progress-status">جارٍ بدء التنزيل...</span>
+              <strong id="progress-percent">0%</strong>
+            </div>
+            <div class="progress-track" role="progressbar" aria-label="نسبة تقدم التنزيل" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track">
+              <span id="progress-fill"></span>
+            </div>
+            <div class="progress-details">
+              <span id="progress-speed">السرعة: —</span>
+              <span id="progress-size">الحجم: —</span>
+              <span id="progress-eta">المتبقي: —</span>
+            </div>
+          </section>
+        </div>
+      </section>
+    </section>
+
+    <div class="bottom-info">
+      <div class="info-icon" aria-hidden="true">i</div>
+      <p class="note">نزّل فقط المحتوى الذي تملكه أو لديك إذن بتنزيله، والتزم بشروط استخدام المنصة وحقوق النشر.</p>
+    </div>
+    <footer>واجهة بسيطة لتنزيل المحتوى الذي تملك حق استخدامه.</footer>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
